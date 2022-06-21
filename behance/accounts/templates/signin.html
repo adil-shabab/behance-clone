@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signin - Behance</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}" />
+  </head>
+  <body>
+    <section class="signin-container">
+      <div class="logo-wrapper">
+        <img src="{% static '/images/signuplogo.png' %}" alt="" />
+        <h3>Behance</h3>
+      </div>
+      <div class="signin-form-wrapper">
+        <div class="signin-form-box">
+          <h5>Sign in to continue</h5>
+          <div class="signin-logo-wrapper">
+            <img src="{% static 'images/signuplogo.png' %}" alt="" />
+            <h3>Behance</h3>
+          </div>
+          <!-- Signup Form -->
+          <form action="{% url 'signin' %}" method="POST">
+            {% csrf_token %}
+            <div class="form-container">
+              <label for="username">Username</label>
+              <input type="text" name="username" required />
+              <label for="password">Password</label>
+              <input type="password" name="password" required />
+              <button class="signin-button" type="submit">Sign in</button>
+            </div>
+          </form>
+          <!-- Signup Form Ends-->
+          <button class="signin-button"><a href="#">Sign in</a></button>
+          <p>
+            Not a member yet?
+            <span><a href="/signup.html">Sign up Now</a></span>
+          </p>
+          <button class="facebook-login">
+            <a href="#"
+              ><i class="fab fa-facebook-square"></i>Continue with Facebook</a
+            >
+          </button>
+          <button class="google-login">
+            <a href="#"><i class="fab fa-google"></i>Continue with Google</a>
+          </button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
