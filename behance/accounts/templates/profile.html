@@ -1,0 +1,157 @@
+profile.html
+Today
+07:44
+
+Smruthy Balakrishnan shared an item
+HTML
+profile.html
+
+Can view
+You
+02:23
+
+Smruthy Balakrishnan uploaded an item
+HTML
+profile.html
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Richard Hendrik - Behance</title>
+</head>
+<body>
+     <!-- Header Bar Starts Here -->
+{% include "navbar.html" %}
+        <!-- Header Bar Ends Here -->   
+
+        <section class="profile-container">
+            <!-- Banner Image -->
+            <div class="banner-position">
+                <img src="{{profile.coverimage.url}}" alt="">
+            </div>
+    
+            <div class="menu-wrapper">
+                <div class="menu-options">
+                    <button>Work</button>
+                    <button>Moodboards</button>
+                    <button>Appreciations</button>
+                </div>
+    
+                <!-- Works Projects Display -->
+                <!-- Project Section Starts Here -->
+                <div class="project-container">
+                    <div class="project-wrapper">
+    
+                        {% for work in profile.work_set.all %}
+                        <!-- First Project Card -->
+                        <div class="projects">
+                            <a href="{% url 'singlework' work.id %}"><img src="{{work.cover.url}}" alt=""></a>
+                            <div class="projects-info">
+                                <h4>{{work.title}}</h4>
+                                <div class="user-stats">
+                                    <div class="user">
+                                        <p>{{work.profile}}</p>
+                                    </div>
+                                    <div class="photo-stats">
+                                        <p><a href=""><i class="fas fa-thumbs-up"></a></i></p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        {% endfor %}
+    
+                        
+    
+                        
+                        
+                    </div>
+                </div>
+            </div>
+    
+    
+            <!-- User Profile Card -->
+            <div class="profile-card">
+                <div class="profile-pic">
+                    <img src="{{profile.dp.url}}" alt="">
+                </div>
+                <h2>{{profile.name}}</h2>
+                <h4>{{profile.bio}}</h4>
+    
+                <div class="user-location">
+                    <p><i class="fas fa-map-marker-alt"></i>{{profile.location}}</p>
+                </div>
+    
+                
+                
+                <div class="profile-stats">
+                    <div>
+                        <p>Project Views</p>
+                        <p>108,026</p>
+                    </div>
+                    <div>
+                        <p>Appreciations</p>
+                        <p>0</p>
+                    </div>
+                    <div>
+                        <p>Followers</p>
+                        
+                        <p></p>
+                        
+                    </div>
+                    <div>
+                        <p>Following</p>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="social-icons">
+                    {% if profile.facebook %}
+                    <a href="{{profile.facebook}}" target="_blank"><i class="fab fa-facebook"></i></a>
+                    {% endif %}
+                    {% if profile.instagram %}
+                    <a href="{{profile.instagram}}" target="_blank"><i class="fab fa-instagram"></i></a>
+                    {% endif %}
+                    {% if profile.dribbble %}
+                    <a href="{{profile.dribbble}}" target="_blank"><i class="fab fa-dribbble"></i></a>
+                    {% endif %}
+    
+                    {% if profile.linkedin %}
+                    <a href="{{profile.linkedin}}" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    {% endif %}
+                </div>
+                <div class="social-texts">
+                    {% if profile.facebook %}
+                    <a href="{{profile.facebook}}" target="_blank"><p>Facebook <i class="fas fa-long-arrow-alt-right"></i></p></a>
+                    {% endif %}
+                    {% if profile.dribbble %}
+                    <a href="{{profile.dribbble}}" target="_blank"><p>Dribble <i class="fas fa-long-arrow-alt-right"></i></p></a>
+                    {% endif %}
+                    {% if profile.linkedin %}
+                    <a href="{{profile.linkedin}}" target="_blank"><p>Linkedin <i class="fas fa-long-arrow-alt-right"></i></p></a>
+                    {% endif %}
+                    {% if profile.instagram %}
+                    <a href="{{profile.instagram}}" target="_blank"><p>Instagram <i class="fas fa-long-arrow-alt-right"></i></p></a>
+                    {% endif %}
+                    {% if profile.email %}
+                    <a href="mailto: {{profile.email}}" target="_blank"><p>Email <i class="fas fa-long-arrow-alt-right"></i></p></a>
+                    {% endif %}
+                </div>
+                <div class="profile-contact">
+                    <p>CONTACT INFORMATION</p>
+                    <small>{{profile.website}}</small>
+                </div>
+                <p>MEMBER SINCE: {{profile.created}}</p>
+            </div>
+            </section>
+    
+
+
+</body>
+</html>
