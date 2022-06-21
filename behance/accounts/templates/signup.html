@@ -1,0 +1,57 @@
+signup.html
+Today
+07:44
+
+Smruthy Balakrishnan shared an item
+HTML
+signup.html
+
+Can view
+You
+02:23
+
+Smruthy Balakrishnan uploaded an item
+HTML
+signup.html
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Behance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+</head>
+<body>
+    <section class="signup-container">
+        <div class="logo-wrapper">
+            <img src="{% static 'images/signuplogo.png' %}" alt="">
+            <h3>Behance</h3>
+        </div>
+        <div class="signup-form-wrapper">
+            <div class="signup-form-box">
+                <h2>Create an account</h2>
+                <h4>Already have an account? <span><a href="/signin.html">Sign in</a></span></h4>
+                
+                <!-- Signup Form -->
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <button type="submit" class="create-account-button">Create account</button>  
+                </form>
+                <!-- Signup Form Ends-->
+                <small>By clicking Create account, I agree that:</small>
+                    <ul>
+                        <li>I have read and accepted the Terms of Use.</li>
+                        <li>The Adobe family of companies may keep me informed with personalized emails about products and services.</li>
+                    </ul>
+                    <small>See our Privacy Policy for more details or to opt-out at any time.</small>
+                <button class="facebook-login"><a href="#"><i class="fab fa-facebook-square "></i>Continue with Facebook</a></button>
+                <button class="google-login"><a href="#"><i class="fab fa-google"></i>Continue with Google</a></button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
