@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Richard Hendrik - Behance</title>
+</head>
+<body>
+     <!-- Header Bar Starts Here -->
+    {% include "navbar.html" %}
+    <section class="profile-container">
+        <div class="banner-position">
+            <img src="{{profile.coverimage.url}}" alt="">
+        </div>
+    
+        <div class="menu-wrapper">
+            <div class="menu-options">
+                <button>Work</button>
+                <button>Livestreams</button>
+                <button>Moodboards</button>
+                <button>Appreciations</button>
+                <button>Insights</button>
+                <button>Drafts</button>
+            </div>
+             <!-- Project Section Starts Here -->
+            <div class="project-container">
+            <div class="project-wrapper">
+            {% for work in works %}
+            <!-- First Project Card -->
+            <div class="projects">
+                <a href="{% url 'singlework' work.id %}"><img src="{{work.cover.url}}" alt=""></a>
+                <div class="projects-info">
+                    <h4>{{work.title}}</h4>
+                    <div class="user-stats">
+                        <div class="user">
+                            <p>{{work.profile}}</p>
+                            
+                        </div>
+                        <div class="photo-stats">
+                            <p><i class="fas fa-thumbs-up"></i></p>
+                            <a style="color: white;" href="">Edit</a>
+                            <a style="color: white;" href="">Delete</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    </div>
+    
+        <div class="profile-card">
+            <div class="profile-pic">
+                <img src="{{profile.dp.url}}" alt="">
+            </div>
+            <h2>{{profile.name}}</h2>
+            <div class="user-location">
+                <p><i class="fas fa-map-marker-alt"></i>United Kingdom</p>
+            </div>
+            <button><i class="fas fa-pen"></i><a style="color: white; text-decoration: none;" href="">Edit Your Profile</a></button>
+            <p>MEMBER SINCE: SEPTEMBER 21, 2017</p>
+        </div>
+    
+    
+    
+    
+    </section>
+
+    
+</body>
+</html>
