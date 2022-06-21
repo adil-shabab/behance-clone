@@ -1,0 +1,32 @@
+{% load static %}
+<header>
+        <div class="left-nav">
+            <a href=""><img src="{% static '/images/behance logo.svg' %}" alt=""></a>
+            <ul>
+                <li>For You</li>
+                <li><a href="/galleries.html">Discover</a></li>
+                <li>Livestreams</li>
+                <li>Jobs</li>
+            </ul>
+        </div>
+        <div class="input-container">
+            <input type="text" placeholder="Search..">
+            <img src="{% static 'images/search-icon.png' %}" alt="">
+        </div>
+        <div class="right-nav">
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'creatework' %}"><button style="cursor: pointer;">Share Your Work</button></a>
+            <a href="{% url 'logout' %}"><i class="fa-solid fa-power-off"></i></a>
+            {% else %}
+            <a href="{% url 'signin' %}"><button style="cursor: pointer;">Sign In</button></a>
+            <a href="{% url 'signup' %}"><button style="cursor: pointer;">Sign Up</button></a>
+            {% endif %}
+            <a href="/inbox.html"><i class="fas fa-envelope"></i></a>
+            <i class="fas fa-bell"></i>
+            <a href="{% url 'profile' %}">
+                <div class="profile">
+                    <img src="{% static 'images/users/user1.jpg' %}" alt="">
+                </div></a>
+            <img src="{% static 'images/adobe-logo.png' %}" alt="">
+        </div>
+    </header>
