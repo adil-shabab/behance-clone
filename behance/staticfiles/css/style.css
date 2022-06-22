@@ -1,0 +1,309 @@
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    line-height: 22px;
+    font-style: normal;
+    color: #191919;
+  }
+  
+  h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    line-height: 22px;
+    font-style: normal;
+    color: #191919;
+  }
+  
+  h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    line-height: 22px;
+    font-style: normal;
+    color: #191919;
+  }
+  
+  h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    line-height: 22px;
+    font-style: normal;
+    color: #191919;
+  }
+  
+  h5 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    line-height: 22px;
+    font-style: normal;
+    color: #191919;
+  }
+  
+  h6 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    line-height: 22px;
+    font-style: normal;
+    color: #191919;
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  header {
+    height: 53px;
+    width: 100%;
+    display: flex;
+    background-color: #fff;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 23px;
+    border-bottom: 1px solid #dfdfdf;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px -1px rgba(70, 42, 42, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  header .left-nav {
+    display: flex;
+    align-items: center;
+    color: #191919;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    line-height: 22px;
+    font-style: normal;
+    font-size: 16px;
+  }
+  
+  header .left-nav img {
+    margin-right: 18px;
+    height: 15px;
+  }
+  
+  header .left-nav ul {
+    list-style: none;
+  }
+  
+  header .left-nav ul li {
+    display: inline-block;
+    padding-right: 15px;
+    cursor: pointer;
+  }
+  
+  header .left-nav ul li a {
+    text-decoration: none;
+    color: #191919;
+  }
+  
+  header .input-container {
+    position: relative;
+  }
+  
+  header .input-container input {
+    width: 400px;
+    height: 33px;
+    border-radius: 20px;
+    border: 2px solid #dfdfdf;
+    padding: 10px 0px 10px 30px;
+    color: #191919;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    line-height: 22px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+  }
+  
+  header .input-container img {
+    position: absolute;
+    bottom: 8px;
+    left: 10px;
+    width: 17px;
+    height: 17px;
+  }
+  
+  header .right-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  header .right-nav button {
+    width: 144px;
+    height: 33px;
+    border-radius: 20px;
+    color: #191919;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    line-height: 22px;
+    font-style: normal;
+    border: 1px solid #dfdfdf;
+    background-color: transparent;
+    margin-right: 20px;
+  }
+  
+  header .right-nav a {
+    color: #000;
+  }
+  
+  header .right-nav a i {
+    color: #000;
+  }
+  
+  header .right-nav i {
+    margin-right: 15px;
+  }
+  
+  header .right-nav .profile {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    margin-right: 20px;
+    overflow: hidden;
+  }
+  
+  header .right-nav .profile img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .project-container {
+    height: max-content;
+    margin: 26px;
+    width: auto;
+  }
+  
+  .project-container h2 {
+    font-size: 18px;
+  }
+  
+  .project-container .project-wrapper {
+    height: max-content;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .project-container .project-wrapper .projects {
+    margin-top: 30px;
+    height: 317px;
+    width: 351px;
+    border-radius: 6px 6px 0px 0px;
+    overflow: hidden;
+  }
+  
+  .project-container .project-wrapper .projects img {
+    height: 275px;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .project-container .project-wrapper .projects-info {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 2px;
+    color: #191919;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    line-height: 22px;
+    font-style: normal;
+  }
+  
+  .project-container .project-wrapper .projects-info .user {
+    display: flex;
+  }
+  
+  .project-container .project-wrapper .projects-info .user img {
+    height: 20px;
+    width: 20px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 5px;
+  }
+  
+  .project-container .project-wrapper .projects-info .user a {
+    text-decoration: none;
+    color: #191919;
+  }
+  
+  .project-container .project-wrapper .projects-info .user p {
+    font-size: 13px;
+  }
+  
+  .project-container .project-wrapper .projects-info .photo-stats {
+    display: flex;
+    font-size: 12px;
+    color: #696969;
+  }
+  
+  .project-container .project-wrapper .projects-info .photo-stats p {
+    margin-right: 10px;
+  }
+  
+  .project-container .project-wrapper .projects-info .photo-stats p .fas {
+    padding-right: 4px;
+  }
+  
+  
+  
+  /* Input Style Code Starts */
+  .style-container {
+    background: url(/images/signup-background.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+  }
+  
+  .style-container .input-one {
+    height: 40px;
+    width: 600px;
+    margin: 10px;
+    border-radius: 20px;
+    border: 1px solid grey;
+    padding: 15px;
+  }
+  
+  .style-container .input-one:focus {
+    background-color: bisque;
+    outline: none;
+  }
+  
+  .style-container .input-two {
+    height: 40px;
+    width: 600px;
+    margin: 10px;
+    border-radius: 20px;
+    border: 1px solid grey;
+    padding: 15px;
+  }
+  
+  .style-container .input-two:focus {
+    background-color: bisque;
+    outline: none;
+  }
+  
+  .style-container .submit-button {
+    height: 40px;
+    width: 100px;
+    border-radius: 20px;
+    border: 1px solid #32325c;
+    background-color: #32325c;
+    color: white;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  /*# sourceMappingURL=style.css.map */
